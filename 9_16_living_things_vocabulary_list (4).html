@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANGUALEARN • Living Things - Vocabulary List (9 - 16)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Fredoka', 'Cairo', sans-serif;
+            background-color: #f8faf5;
+            background-image: 
+                radial-gradient(#d9f99d 1.2px, transparent 1.2px), 
+                radial-gradient(#fde68a 1.2px, #f8faf5 1.2px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            overflow-x: hidden;
+        }
+
+        .en-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .ar-font {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        /* التظليل الجذاب الثابت عند القراءة (بدون حركة أو اهتزاز) */
+        .static-attractive-highlight {
+            background: linear-gradient(180deg, #dcfce7 0%, #86efac 100%) !important;
+            border-color: #059669 !important;
+            box-shadow: 0 4px 0 #059669, 0 0 0 3.5px #34d399 !important;
+            color: #064e3b !important;
+        }
+
+        /* ترويسة الملزمة العلوية */
+        .olive-header-banner {
+            background: linear-gradient(90deg, #5c7c47 0%, #6e9255 50%, #5c7c47 100%);
+            border-bottom: 4px solid #3f592e;
+        }
+
+        .langualearn-title-text {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 900;
+            color: #f59e0b;
+            text-shadow: 
+                2px 2px 0 #ffffff,
+                -2px -2px 0 #ffffff,
+                2px -2px 0 #ffffff,
+                -2px 2px 0 #ffffff,
+                0 4px 8px rgba(0,0,0,0.25);
+            letter-spacing: 0.04em;
+        }
+
+        /* لافتة Unit 1 البنية */
+        .unit-brown-notebook {
+            background: linear-gradient(180deg, #9a4a26 0%, #7c3718 100%);
+            border: 3px solid #58230b;
+            border-radius: 16px;
+            box-shadow: 0 5px 0 #451a03;
+            position: relative;
+        }
+
+        /* شريط Vocabulary list الزيتوني */
+        .vocab-title-pill {
+            background: linear-gradient(90deg, #748c5c 0%, #5b7345 50%, #748c5c 100%);
+            border: 3px solid #2e3d21;
+            border-radius: 18px;
+            box-shadow: 0 4px 0 #2e3d21;
+        }
+
+        /* بطاقة المفردة في الشبكة */
+        .vocab-item-wrapper {
+            background: #ffffff;
+            border: 2.5px solid #cbd5e1;
+            border-radius: 22px;
+            padding: 10px;
+            box-shadow: 0 5px 0 #cbd5e1;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .vocab-item-wrapper:hover {
+            border-color: #65a30d;
+        }
+
+        /* إطار الصورة العلوي داخل كل بطاقة مع الحافة البنية الجانبية المطابقة للصورة */
+        .vocab-img-frame {
+            border: 2.5px solid #334155;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #0f172a;
+            position: relative;
+            aspect-ratio: 4 / 3;
+            width: 100%;
+            box-shadow: -4px 0 0 #b45309;
+        }
+
+        .vocab-img-frame img,
+        .vocab-img-frame svg {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            display: block !important;
+        }
+
+        /* صندوق الكلمة والمعنى الأوسط */
+        .word-meaning-box {
+            border: 2px solid #475569;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 6px 10px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+        .word-meaning-box:hover {
+            background: #f7fee7;
+            border-color: #4d7c0f;
+        }
+
+        /* شارة الرقم البنية على يسار صندوق الكلمة كما في الملزمة */
+        .num-tag-brown {
+            background: #b45309;
+            color: #ffffff;
+            border: 2px solid #78350f;
+            border-radius: 8px;
+            min-width: 30px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 0 #451a03;
+        }
+
+        /* صندوق الجملة المثال السفلي */
+        .example-sentence-box {
+            border: 2px solid #475569;
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 7px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+        .example-sentence-box:hover {
+            background: #ecfdf5;
+            border-color: #059669;
+        }
+
+        /* تلوين الكلمة المستهدفة بالأحمر داخل الجملة كما في الملزمة */
+        .target-red-word {
+            color: #dc2626;
+            font-weight: 900;
+        }
+
+        .static-attractive-highlight .target-red-word {
+            color: #b91c1c !important;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800">
+
+    <!-- شريط التحكم العلوي الثابت -->
+    <nav class="bg-white/95 backdrop-blur-md border-b-2 border-lime-300 sticky top-0 z-40 px-3 sm:px-4 py-2.5 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center justify-center sm:justify-between gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-lime-600 animate-pulse"></span>
+                <span class="font-black text-slate-800 text-sm sm:text-base">LANGUALEARN • Vocabulary List (9 - 16)</span>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap justify-center">
+                <!-- زر القراءة المتسلسلة لجميع المفردات والجمل -->
+                <button onclick="toggleSequentialPlayAll()" id="playAllVocabBtn" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs sm:text-sm font-black shadow flex items-center gap-1.5 transition active:scale-95">
+                    <i id="playAllIcon" class="fa-solid fa-play"></i>
+                    <span id="playAllText" class="ar-font">قراءة الكل بالترتيب (9-16) 🔊</span>
+                </button>
+
+                <!-- زر تبديل السرعة -->
+                <button onclick="toggleSpeechRate()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl text-xs sm:text-sm font-bold text-slate-700 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-gauge-high text-teal-600"></i>
+                    <span id="speedDisplay">هادئ وتعليمي (0.78x)</span>
+                </button>
+
+                <!-- زر إخفاء/إظهار المعاني والترجمة لاختبار الحفظ -->
+                <button onclick="toggleArabicMeanings()" id="toggleMeaningsBtn" class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs sm:text-sm font-black shadow flex items-center gap-1.5 transition active:scale-95">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <span class="ar-font">إخفاء المعاني (اختبر نفسك)</span>
+                </button>
+
+                <!-- زر حفظ الملف بالصور دائماً -->
+                <button id="saveHtmlWithImagesBtn" onclick="downloadPageWithSavedImages()" class="hidden px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-black shadow flex items-center gap-1.5 transition active:scale-95">
+                    <i class="fa-solid fa-floppy-disk text-amber-300"></i>
+                    <span class="ar-font">حفظ الملف بالصور دائماً</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-4 flex-grow">
+
+        <!-- ترويسة الملزمة مع شعار LANGUALEARN -->
+        <header class="mb-6 select-none">
+            <div class="olive-header-banner rounded-3xl p-4 sm:p-5 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3 z-10">
+                    <div class="w-12 h-12 rounded-2xl bg-white/95 border-2 border-amber-300 shadow flex items-center justify-center text-2xl">
+                        🦅
+                    </div>
+                    <div class="bg-[#fdf6d8] border-2 border-[#5c7c47] px-4 py-1.5 rounded-xl shadow transform -rotate-6">
+                        <span class="en-font font-black text-lg sm:text-2xl text-slate-900">Top Goal</span>
+                    </div>
+                </div>
+
+                <div class="z-10 text-center">
+                    <h1 dir="rtl" class="ar-font font-black text-2xl sm:text-4xl text-white drop-shadow-md tracking-wide">
+                        الاستعداد للاختبارات المركزية
+                    </h1>
+                </div>
+
+                <!-- شعار LANGUALEARN -->
+                <div class="z-10">
+                    <span class="langualearn-title-text text-2xl sm:text-4xl tracking-wider">LANGUALEARN</span>
+                </div>
+            </div>
+
+            <!-- شارة Vocabulary list -->
+            <div class="flex flex-col items-center justify-center -mt-3 relative z-20">
+                <div class="vocab-title-pill px-10 sm:px-16 py-2 mt-2 text-center">
+                    <h2 class="en-font font-black text-xl sm:text-3xl text-white tracking-wider drop-shadow">
+                        Vocabulary list (9 - 16)
+                    </h2>
+                </div>
+
+                <p dir="rtl" class="ar-font text-xs sm:text-sm font-extrabold text-teal-800 bg-teal-50 px-4 py-1.5 rounded-full border border-teal-200 mt-3 text-center shadow-2xs">
+                    💡 انقر على <span class="text-amber-800 font-black">الكلمة</span> لسماع نطقها، أو انقر على <span class="text-emerald-800 font-black">الجملة</span> لسماعها كاملةً بالتظليل الثابت مع ظهور ترجمتها العربية!
+                </p>
+            </div>
+        </header>
+
+        <!-- ======================================================================= -->
+        <!-- شبكة بطاقات المفردات (9 إلى 16) بصور ثابتة مدمجة مباشرةً في الـ HTML    -->
+        <!-- ======================================================================= -->
+        <section class="mb-8">
+            <div id="vocabCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+
+                <!-- 9. eagle -->
+                <div id="vocab-card-9" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-9" class="w-full h-full relative overflow-hidden">
+                            <!-- خلفية احتياطية عالية التفاصيل تغطي الإطار بالكامل -->
+                            <svg viewBox="0 0 280 210" preserveAspectRatio="xMidYMid slice" class="w-full h-full object-cover block">
+                                <defs>
+                                    <linearGradient id="realSky" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#38bdf8"/>
+                                        <stop offset="55%" stop-color="#bae6fd"/>
+                                        <stop offset="100%" stop-color="#fde68a"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="280" height="210" fill="url(#realSky)"/>
+                                <polygon points="0,150 55,75 115,145 170,95 235,60 280,120 280,210 0,210" fill="#64748b"/>
+                                <path d="M0,145 Q90,165 150,190 L280,140 L280,210 L0,210 Z" fill="#15803d"/>
+                                <path d="M12,35 L118,88 L175,85 L268,18 L245,78 L185,118 L215,155 L165,162 L140,130 L32,88 Z" fill="#1e293b"/>
+                                <circle cx="132" cy="84" r="18" fill="#ffffff"/>
+                                <polygon points="110,82 124,78 122,90" fill="#facc15"/>
+                            </svg>
+                            <!-- صورة حقيقية مكبرة للنسر تغطي كامل الإطار من الحافة للحافة -->
+                            <img
+                                src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=900&q=85"
+                                alt="eagle"
+                                class="absolute inset-0 w-full h-full object-cover object-center scale-110 block"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557401620-67270b61ea82?auto=format&fit=crop&w=900&q=85';"
+                            />
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-9" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (eagle)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-9" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 9)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-9" onclick="readVocabWord(9)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">9</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">eagle</span>
+                            <span id="word-ar-9" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">نسر</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(9)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-9" onclick="readVocabSentence(9)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                The <span class="target-red-word">eagle</span> is a powerful bird.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-9" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. fur -->
+                <div id="vocab-card-10" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-10" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <!-- Panel 1: Leopard Spotted Fur (Left) -->
+                                <rect x="0" y="0" width="76" height="200" fill="#eab308"/>
+                                <g fill="#1c1917">
+                                    <circle cx="22" cy="26" r="9"/><circle cx="24" cy="26" r="4" fill="#b45309"/>
+                                    <circle cx="55" cy="44" r="10"/><circle cx="55" cy="44" r="4" fill="#b45309"/>
+                                    <circle cx="26" cy="78" r="11"/><circle cx="26" cy="78" r="5" fill="#b45309"/>
+                                    <circle cx="58" cy="108" r="9"/><circle cx="58" cy="108" r="4" fill="#b45309"/>
+                                    <circle cx="24" cy="142" r="10"/><circle cx="24" cy="142" r="4.5" fill="#b45309"/>
+                                    <circle cx="54" cy="174" r="11"/><circle cx="54" cy="174" r="5" fill="#b45309"/>
+                                </g>
+                                <!-- Panel 2: Soft Golden-Brown Fur (Center) -->
+                                <rect x="76" y="0" width="128" height="200" fill="#b45309"/>
+                                <path d="M90 0 Q115 50 95 100 Q120 150 95 200" stroke="#d97706" stroke-width="18" fill="none"/>
+                                <path d="M135 0 Q165 55 140 110 Q165 155 142 200" stroke="#f59e0b" stroke-width="16" fill="none" opacity="0.7"/>
+                                <path d="M110 15 L125 45 M150 25 L135 60 M105 85 L128 118 M158 95 L138 135 M112 145 L132 182" stroke="#fef3c7" stroke-width="2.5" opacity="0.65" stroke-linecap="round"/>
+                                <!-- Panel 3: Thick Dark Brown Bear Fur (Right) -->
+                                <rect x="204" y="0" width="76" height="200" fill="#451a03"/>
+                                <path d="M215 10 L235 45 M245 15 L265 55 M218 65 L242 105 M248 75 L268 115 M215 125 L238 168 M245 135 L266 185" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+                                <line x1="76" y1="0" x2="76" y2="200" stroke="#1e293b" stroke-width="3"/>
+                                <line x1="204" y1="0" x2="204" y2="200" stroke="#1e293b" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-10" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (fur)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-10" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 10)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-10" onclick="readVocabWord(10)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">10</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">fur</span>
+                            <span id="word-ar-10" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">فرو</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(10)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-10" onclick="readVocabSentence(10)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                The polar bear has thick <span class="target-red-word">fur</span>.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-10" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. journey -->
+                <div id="vocab-card-11" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-11" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <!-- Car Interior & Windows -->
+                                <rect width="280" height="200" fill="#cbd5e1"/>
+                                <rect x="20" y="12" width="240" height="95" rx="14" fill="#e0f2fe" stroke="#64748b" stroke-width="4"/>
+                                <!-- Kids in Backseat -->
+                                <circle cx="105" cy="48" r="18" fill="#fed7aa"/>
+                                <path d="M87 42 Q105 22 123 42 Z" fill="#292524"/>
+                                <rect x="85" y="66" width="40" height="45" rx="8" fill="#1d4ed8"/>
+                                <circle cx="152" cy="76" r="16" fill="#fed7aa"/>
+                                <path d="M134 72 Q152 50 170 72 L172 105 L132 105 Z" fill="#78350f"/>
+                                <rect x="134" y="92" width="36" height="40" rx="6" fill="#93c5fd"/>
+                                <!-- Mother on Left Front Seat -->
+                                <path d="M12 65 Q48 20 84 65 L90 145 L8 145 Z" fill="#451a03"/>
+                                <circle cx="48" cy="72" r="24" fill="#fed7aa"/>
+                                <path d="M40 82 Q48 89 56 82" stroke="#9a3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <rect x="14" y="102" width="68" height="98" rx="14" fill="#38bdf8"/>
+                                <line x1="16" y1="110" x2="75" y2="195" stroke="#1e293b" stroke-width="7"/>
+                                <!-- Father on Right Front Seat -->
+                                <circle cx="226" cy="64" r="25" fill="#fed7aa"/>
+                                <path d="M200 54 Q226 24 252 54 Z" fill="#1c1917"/>
+                                <path d="M216 74 Q226 82 236 74" stroke="#7c2d12" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <rect x="186" y="96" width="82" height="104" rx="14" fill="#1e3a8a"/>
+                                <line x1="264" y1="106" x2="195" y2="195" stroke="#0f172a" stroke-width="7"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-11" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (journey)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-11" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 11)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-11" onclick="readVocabWord(11)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">11</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">journey</span>
+                            <span id="word-ar-11" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">رحلة</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(11)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-11" onclick="readVocabSentence(11)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                They started a long <span class="target-red-word">journey</span> today.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-11" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. look after -->
+                <div id="vocab-card-12" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-12" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <rect width="280" height="200" fill="#e2e8f0"/>
+                                <!-- Veterinarian on Left in White Coat & Blue Gloves -->
+                                <circle cx="82" cy="58" r="28" fill="#fed7aa"/>
+                                <path d="M54 48 Q82 18 110 48 Z" fill="#94a3b8"/>
+                                <circle cx="76" cy="56" r="3" fill="#1e293b"/>
+                                <circle cx="94" cy="56" r="3" fill="#1e293b"/>
+                                <rect x="18" y="88" width="125" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+                                <polygon points="65,88 98,88 82,132" fill="#38bdf8"/>
+                                <!-- Cute Golden Puppy on Right -->
+                                <ellipse cx="222" cy="138" rx="34" ry="44" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+                                <circle cx="212" cy="78" r="28" fill="#fef08a" stroke="#d97706" stroke-width="2"/>
+                                <ellipse cx="184" cy="78" rx="9" ry="20" transform="rotate(15 184 78)" fill="#eab308"/>
+                                <ellipse cx="240" cy="78" rx="9" ry="20" transform="rotate(-15 240 78)" fill="#eab308"/>
+                                <circle cx="202" cy="72" r="3.5" fill="#0f172a"/>
+                                <circle cx="222" cy="72" r="3.5" fill="#0f172a"/>
+                                <circle cx="212" cy="84" r="5" fill="#1c1917"/>
+                                <!-- Vet's Blue Gloved Hand Caring for Puppy -->
+                                <ellipse cx="176" cy="112" rx="22" ry="13" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-12" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (look after)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-12" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 12)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-12" onclick="readVocabWord(12)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">12</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">look after</span>
+                            <span id="word-ar-12" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">يعتني</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(12)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-12" onclick="readVocabSentence(12)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                We must <span class="target-red-word">look after</span> our pets.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-12" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. nest -->
+                <div id="vocab-card-13" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-13" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <rect width="280" height="200" fill="#d6c5b3"/>
+                                <!-- Woven Bird Nest -->
+                                <ellipse cx="140" cy="108" rx="88" ry="68" fill="#785937" stroke="#451a03" stroke-width="4"/>
+                                <ellipse cx="140" cy="96" rx="68" ry="48" fill="#5c4228" stroke="#3f2c1b" stroke-width="3"/>
+                                <!-- Twigs texture around nest -->
+                                <path d="M65 85 L105 52 M175 50 L215 82 M62 122 L115 156 M165 156 L218 118 M95 162 L185 162" stroke="#967249" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Eggs inside the Nest -->
+                                <ellipse cx="122" cy="84" rx="14" ry="18" transform="rotate(-15 122 84)" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+                                <ellipse cx="152" cy="82" rx="14" ry="18" transform="rotate(12 152 82)" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+                                <ellipse cx="110" cy="106" rx="15" ry="12" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+                                <ellipse cx="140" cy="106" rx="15" ry="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+                                <ellipse cx="168" cy="104" rx="14" ry="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+                                <ellipse cx="135" cy="122" rx="15" ry="11" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-13" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (nest)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-13" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 13)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-13" onclick="readVocabWord(13)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">13</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">nest</span>
+                            <span id="word-ar-13" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">عش</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(13)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-13" onclick="readVocabSentence(13)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                The bird builds its <span class="target-red-word">nest</span> carefully.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-13" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. octopus -->
+                <div id="vocab-card-14" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-14" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <rect width="280" height="200" fill="#0f172a"/>
+                                <!-- Ocean floor & Coral -->
+                                <path d="M0 175 Q140 160 280 178 L280 200 L0 200 Z" fill="#1e293b"/>
+                                <path d="M225 182 L238 152 M238 165 L252 154 M225 168 L212 155" stroke="#fb7185" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Octopus Head -->
+                                <ellipse cx="115" cy="58" rx="38" ry="32" transform="rotate(-12 115 58)" fill="#fb923c" stroke="#c2410c" stroke-width="2.5"/>
+                                <circle cx="132" cy="64" r="6" fill="#0f172a"/>
+                                <circle cx="130" cy="62" r="2" fill="#ffffff"/>
+                                <!-- Eight Curled Tentacles -->
+                                <path d="M95 82 C65 102 35 82 42 62" fill="none" stroke="#fb923c" stroke-width="12" stroke-linecap="round"/>
+                                <path d="M102 88 C68 128 38 138 28 118" fill="none" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+                                <path d="M115 92 C95 142 75 168 55 152" fill="none" stroke="#fb923c" stroke-width="12" stroke-linecap="round"/>
+                                <path d="M128 92 C125 145 112 172 95 164" fill="none" stroke="#ea580c" stroke-width="11" stroke-linecap="round"/>
+                                <path d="M138 88 C155 138 175 168 198 152" fill="none" stroke="#fb923c" stroke-width="12" stroke-linecap="round"/>
+                                <path d="M145 82 C185 115 225 135 242 112" fill="none" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+                                <path d="M148 72 C192 78 218 42 195 34" fill="none" stroke="#fb923c" stroke-width="11" stroke-linecap="round"/>
+                                <path d="M142 90 C165 135 145 165 132 158" fill="none" stroke="#fdba74" stroke-width="8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-14" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (octopus)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-14" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 14)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-14" onclick="readVocabWord(14)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">14</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">octopus</span>
+                            <span id="word-ar-14" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">أخطبوط</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(14)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-14" onclick="readVocabSentence(14)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                An <span class="target-red-word">octopus</span> has eight legs.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-14" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. pond -->
+                <div id="vocab-card-15" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-15" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <!-- Pond Water & Reeds -->
+                                <rect width="280" height="200" fill="#115e59"/>
+                                <ellipse cx="140" cy="125" rx="135" ry="70" fill="#0f766e"/>
+                                <!-- Green Lily Pads -->
+                                <ellipse cx="95" cy="112" rx="48" ry="18" fill="#65a30d" stroke="#365314" stroke-width="2"/>
+                                <ellipse cx="215" cy="145" rx="42" ry="15" fill="#84cc16" stroke="#3f6212" stroke-width="2"/>
+                                <ellipse cx="135" cy="168" rx="38" ry="14" fill="#65a30d" stroke="#365314" stroke-width="2"/>
+                                <ellipse cx="42" cy="158" rx="35" ry="13" fill="#84cc16" stroke="#3f6212" stroke-width="2"/>
+                                <!-- Green Frog on Lily Pad -->
+                                <ellipse cx="92" cy="94" rx="28" ry="18" fill="#4d7c0f" stroke="#1a2e05" stroke-width="2"/>
+                                <circle cx="112" cy="80" r="12" fill="#65a30d" stroke="#1a2e05" stroke-width="2"/>
+                                <circle cx="116" cy="76" r="3.5" fill="#0f172a"/>
+                                <ellipse cx="74" cy="102" rx="12" ry="8" fill="#3f6212"/>
+                                <!-- Pink Lotus / Water Lilies -->
+                                <g transform="translate(155, 112)">
+                                    <ellipse cx="0" cy="0" rx="12" ry="6" fill="#f472b6"/>
+                                    <ellipse cx="0" cy="-4" rx="6" ry="10" fill="#fbcfe8"/>
+                                    <circle cx="0" cy="-2" r="3" fill="#facc15"/>
+                                </g>
+                                <g transform="translate(192, 106)">
+                                    <ellipse cx="0" cy="0" rx="11" ry="5" fill="#f472b6"/>
+                                    <ellipse cx="0" cy="-4" rx="5" ry="9" fill="#fbcfe8"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-15" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (pond)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-15" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 15)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-15" onclick="readVocabWord(15)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">15</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">pond</span>
+                            <span id="word-ar-15" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">بركة</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(15)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-15" onclick="readVocabSentence(15)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                Frogs live in the small <span class="target-red-word">pond</span>.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-15" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. swan -->
+                <div id="vocab-card-16" class="vocab-item-wrapper">
+                    <div class="vocab-img-frame">
+                        <div id="vocab-img-box-16" class="w-full h-full">
+                            <svg viewBox="0 0 280 200" class="w-full h-full object-cover block">
+                                <rect width="280" height="200" fill="#64748b"/>
+                                <!-- Water Ripples at Bottom -->
+                                <ellipse cx="145" cy="172" rx="115" ry="22" fill="#0f172a"/>
+                                <path d="M55 172 Q145 186 235 172 M75 182 Q145 194 215 182" fill="none" stroke="#94a3b8" stroke-width="2"/>
+                                <!-- White Swan Body & Fluffy Wing -->
+                                <path d="M82 142 C82 95 165 82 232 108 L252 96 L236 146 C205 164 112 164 82 142 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                                <path d="M115 108 C145 78 205 84 224 122 C188 136 135 135 115 108 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+                                <!-- Graceful Curved Neck & Head -->
+                                <path d="M94 138 C76 98 84 42 64 26 C52 18 42 26 42 36" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+                                <circle cx="48" cy="30" r="11" fill="#ffffff"/>
+                                <!-- Orange and Black Swan Beak -->
+                                <polygon points="38,28 20,44 38,38" fill="#f97316"/>
+                                <polygon points="38,26 32,32 39,33" fill="#0f172a"/>
+                                <circle cx="44" cy="27" r="2.2" fill="#0f172a"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-2 right-2 z-10" onclick="event.stopPropagation()">
+                            <label for="upload-vocab-img-16" class="cursor-pointer w-5 h-5 rounded-full bg-white/90 hover:bg-amber-50 text-amber-700 border border-amber-400 shadow-2xs flex items-center justify-center text-[9px] transition opacity-85 hover:opacity-100" title="إضافة أو تغيير صورة (swan)">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-vocab-img-16" accept="image/*" class="hidden" onchange="handleVocabImageUpload(event, 16)" />
+                        </div>
+                    </div>
+
+                    <div id="word-box-16" onclick="readVocabWord(16)" class="word-meaning-box" title="انقر لسماع نطق الكلمة">
+                        <span class="num-tag-brown">16</span>
+                        <div class="flex-1 text-center leading-tight">
+                            <span class="en-font font-black text-lg sm:text-xl text-[#9a4a26] block tracking-wide">swan</span>
+                            <span id="word-ar-16" dir="rtl" class="ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity">بجعة</span>
+                        </div>
+                        <button type="button" onclick="event.stopPropagation(); readVocabWord(16)" class="w-7 h-7 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-xs shadow transition flex-shrink-0" title="استمع للكلمة">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div id="sent-box-16" onclick="readVocabSentence(16)" class="example-sentence-box flex items-center justify-between gap-1.5" title="انقر لسماع الجملة وإظهار ترجمتها">
+                            <p class="en-font font-bold text-xs sm:text-[13.5px] text-slate-800 leading-snug flex-1 text-center">
+                                The white <span class="target-red-word">swan</span> swims in the water.
+                            </p>
+                            <i class="fa-solid fa-volume-high text-emerald-600 text-[11px] flex-shrink-0"></i>
+                        </div>
+                        <div id="sent-ar-16" dir="rtl" class="ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition bg-slate-100 text-slate-400 border border-slate-200">
+                            انقر على الجملة لسماعها وإظهار ترجمتها
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- شريط التذييل السفلي مع شعار LANGUALEARN -->
+        <div class="mt-8 mb-4">
+            <div class="bg-gradient-to-r from-[#5c7c47] via-[#6e9255] to-[#5c7c47] rounded-3xl p-4 sm:px-8 shadow-xl border-b-4 border-[#3f592e] flex flex-col sm:flex-row items-center justify-between gap-4 text-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-[#f5edd6] text-slate-900 border-3 border-white shadow-md flex items-center justify-center font-black text-lg sm:text-xl px-2.5">
+                        9-16
+                    </div>
+                    <div class="text-left leading-tight">
+                        <span class="en-font font-black text-lg sm:text-xl text-amber-300 block">VOCABULARY</span>
+                        <span dir="rtl" class="ar-font text-xs sm:text-sm font-bold text-white block">📖 قائمة المفردات (٩ - ١٦)</span>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p dir="rtl" class="ar-font font-black text-xl sm:text-3xl text-white drop-shadow">
+                        لأنك ما ترضى إلا بالكامل
+                    </p>
+                    <p dir="rtl" class="ar-font text-xs sm:text-sm font-bold text-amber-200 mt-0.5">
+                        Living Things • Top Goal
+                    </p>
+                </div>
+
+                <!-- شعار LANGUALEARN -->
+                <div class="flex items-center gap-2.5 bg-white/95 text-slate-800 px-4 py-2 rounded-2xl border-2 border-amber-400 shadow">
+                    <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-black text-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <div class="text-left leading-tight">
+                        <span class="en-font font-black text-sm sm:text-base text-slate-900 tracking-wide block">LANGUALEARN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- التنبيه الصوتي الحي -->
+    <div id="liveReadingToast" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-8 max-w-[94vw]">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></div>
+        <div class="truncate">
+            <span class="text-[11px] text-slate-400 block font-sans" id="toastSpeakerLabel">Reading calmly:</span>
+            <span id="toastWord" class="en-font font-black text-amber-300 text-base sm:text-lg tracking-wide">...</span>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-white/90 border-t border-lime-200 mt-4 py-4 px-4 text-center text-xs text-slate-600">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p class="font-bold">
+                LANGUALEARN • Living Things • Vocabulary List (Items 9 - 16)
+            </p>
+            <div class="flex items-center gap-2">
+                <span class="bg-indigo-50 text-indigo-800 px-3 py-1 rounded-full font-bold border border-indigo-200 flex items-center gap-1.5">
+                    <i class="fa-solid fa-headset text-indigo-600"></i>
+                    <span id="footerSpeakerName">Calm English Teacher</span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // =====================================================================
+        // بيانات المفردات (9 إلى 16) مع النطق والترجمة العربية وحفظ الصور
+        // =====================================================================
+        const vocabListItems = [
+            {
+                id: 9,
+                word: "eagle",
+                spokenWord: "eagle",
+                arWord: "نسر",
+                spokenSentence: "The eagle is a powerful bird.",
+                arSentence: "النسر طائر قوي.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 10,
+                word: "fur",
+                spokenWord: "fur",
+                arWord: "فرو",
+                spokenSentence: "The polar bear has thick fur.",
+                arSentence: "يمتلك الدب القطبي فرواً كثيفاً.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 11,
+                word: "journey",
+                spokenWord: "journey",
+                arWord: "رحلة",
+                spokenSentence: "They started a long journey today.",
+                arSentence: "بدأوا رحلة طويلة اليوم.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 12,
+                word: "look after",
+                spokenWord: "look after",
+                arWord: "يعتني",
+                spokenSentence: "We must look after our pets.",
+                arSentence: "يجب علينا أن نعتني بحيواناتنا الأليفة.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 13,
+                word: "nest",
+                spokenWord: "nest",
+                arWord: "عش",
+                spokenSentence: "The bird builds its nest carefully.",
+                arSentence: "يبني الطائر عشه بعناية.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 14,
+                word: "octopus",
+                spokenWord: "octopus",
+                arWord: "أخطبوط",
+                spokenSentence: "An octopus has eight legs.",
+                arSentence: "للأخطبوط ثماني أرجل (أذرع).",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 15,
+                word: "pond",
+                spokenWord: "pond",
+                arWord: "بركة",
+                spokenSentence: "Frogs live in the small pond.",
+                arSentence: "تعيش الضفادع في البركة الصغيرة.",
+                sentenceOpened: false,
+                customImg: null
+            },
+            {
+                id: 16,
+                word: "swan",
+                spokenWord: "swan",
+                arWord: "بجعة",
+                spokenSentence: "The white swan swims in the water.",
+                arSentence: "تسبح البجعة البيضاء في الماء.",
+                sentenceOpened: false,
+                customImg: null
+            }
+        ];
+
+        let hideMeaningsMode = false;
+        let isPlayingAllSequentially = false;
+
+        // مفاتيح حفظ الصور في المتصفح وملف HTML
+        const STORAGE_KEY_VOCAB_9_16_IMAGES = 'langualearn_vocab_9_to_16_images_v1';
+        const IDB_NAME = 'LanguaLearnVocab9To16DB';
+        const IDB_STORE = 'imagesStore';
+
+        // إعدادات الصوت التعليمي الهادئ والمتوافق مع GitHub Pages (مطابق 100% لصفحة 142)
+        let currentSpeechRate = 0.78;
+        let currentVoiceStyleIndex = 0;
+        const voiceStyles = [
+            { id: 'calm_female', label: 'المتحدث: معلمة هادئة 🌟', pitch: 1.0, rateOffset: 0 },
+            { id: 'calm_male', label: 'المتحدث: معلم هادئ 🎓', pitch: 0.96, rateOffset: -0.02 },
+            { id: 'clear_uk', label: 'المتحدث: تعليمي واضح (UK) 🇬🇧', pitch: 1.02, rateOffset: 0 }
+        ];
+        let activeTimeouts = [];
+        let lockedNativeVoice = null;
+        let currentAudioPlayer = null;
+        let currentSpeechSessionId = 0;
+        let utteranceGcKeeper = [];
+
+        const EXCLUDED_VOICE_KEYWORDS = [
+            'albert', 'bad news', 'bahh', 'bells', 'boing', 'bubbles', 'cellos',
+            'deranged', 'good news', 'hysterical', 'junior', 'organ', 'princess',
+            'ralph', 'superstar', 'trinoids', 'whisper', 'wobble', 'zarvox', 'fred',
+            'william', 'espeak', 'david', 'mark', 'george', 'richard', 'zira'
+        ];
+
+        // تحديث النصوص والترجمات فقط دون المساس بصور البطاقات الثابتة
+        function updateTranslationsUIOnly() {
+            vocabListItems.forEach(item => {
+                const wordArEl = document.getElementById(`word-ar-${item.id}`);
+                if (wordArEl) {
+                    wordArEl.className = `ar-font font-extrabold text-sm sm:text-base text-slate-700 block transition-opacity ${hideMeaningsMode ? 'opacity-0 select-none' : 'opacity-100'}`;
+                }
+
+                const sentArEl = document.getElementById(`sent-ar-${item.id}`);
+                if (sentArEl) {
+                    const showArSentence = item.sentenceOpened && !hideMeaningsMode;
+                    sentArEl.className = `ar-font text-xs font-black px-2.5 py-1 rounded-lg text-center transition ${
+                        showArSentence
+                            ? 'bg-emerald-50 text-teal-950 border border-emerald-300'
+                            : 'bg-slate-100 text-slate-400 border border-slate-200'
+                    }`;
+                    sentArEl.innerText = hideMeaningsMode
+                        ? 'الترجمة مخفية (اختبر نفسك)'
+                        : (item.sentenceOpened ? item.arSentence : 'انقر على الجملة لسماعها وإظهار ترجمتها');
+                }
+            });
+        }
+
+        // قراءة الكلمة المفردة مع تظليل ثابت جذاب
+        function readVocabWord(itemId, onFinished = null, fromSequence = false) {
+            if (!fromSequence && isPlayingAllSequentially) {
+                stopSequentialPlayAll();
+            }
+            const item = vocabListItems.find(x => x.id === itemId);
+            if (!item) {
+                if (onFinished) onFinished();
+                return;
+            }
+
+            resetAllHighlights(fromSequence);
+            const wordBox = document.getElementById(`word-box-${itemId}`);
+            if (wordBox) wordBox.classList.add('static-attractive-highlight');
+
+            showToast(`${item.word} (${item.arWord})`);
+            const startTime = Date.now();
+            const minDuration = 1250;
+
+            speakSentenceWithLockedVoice(item.spokenWord, () => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, minDuration - elapsed);
+                const endTimer = setTimeout(() => {
+                    if (wordBox) wordBox.classList.remove('static-attractive-highlight');
+                    if (!fromSequence) hideToast();
+                    if (onFinished) onFinished();
+                }, remaining);
+                activeTimeouts.push(endTimer);
+            });
+        }
+
+        // قراءة الجملة المثال مع تظليل ثابت جذاب وإظهار ترجمتها العربية
+        function readVocabSentence(itemId, onFinished = null, fromSequence = false) {
+            if (!fromSequence && isPlayingAllSequentially) {
+                stopSequentialPlayAll();
+            }
+            const item = vocabListItems.find(x => x.id === itemId);
+            if (!item) {
+                if (onFinished) onFinished();
+                return;
+            }
+
+            item.sentenceOpened = true;
+            updateTranslationsUIOnly();
+
+            resetAllHighlights(fromSequence);
+            const sentBox = document.getElementById(`sent-box-${itemId}`);
+            const cardBox = document.getElementById(`vocab-card-${itemId}`);
+            if (sentBox) sentBox.classList.add('static-attractive-highlight');
+            if (cardBox) cardBox.classList.add('border-emerald-500');
+
+            showToast(item.spokenSentence);
+            const startTime = Date.now();
+            const minDuration = 1750;
+
+            speakSentenceWithLockedVoice(item.spokenSentence, () => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, minDuration - elapsed);
+                const endTimer = setTimeout(() => {
+                    if (sentBox) sentBox.classList.remove('static-attractive-highlight');
+                    if (!fromSequence) hideToast();
+                    if (onFinished) onFinished();
+                }, remaining);
+                activeTimeouts.push(endTimer);
+            });
+        }
+
+        // تشغيل أو إيقاف القراءة التلقائية المتسلسلة لجميع البطاقات (9 إلى 16)
+        function toggleSequentialPlayAll() {
+            if (isPlayingAllSequentially) {
+                stopSequentialPlayAll();
+                return;
+            }
+
+            isPlayingAllSequentially = true;
+            updatePlayAllBtnUI();
+            let idx = 0;
+
+            function playNextItem() {
+                if (!isPlayingAllSequentially || idx >= vocabListItems.length) {
+                    if (isPlayingAllSequentially && typeof confetti === 'function') {
+                        confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
+                    }
+                    stopSequentialPlayAll();
+                    return;
+                }
+
+                const currentItem = vocabListItems[idx];
+                const cardEl = document.getElementById(`vocab-card-${currentItem.id}`);
+                if (cardEl) {
+                    cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                readVocabWord(currentItem.id, () => {
+                    if (!isPlayingAllSequentially) return;
+                    const pauseBetween = setTimeout(() => {
+                        if (!isPlayingAllSequentially) return;
+                        readVocabSentence(currentItem.id, () => {
+                            if (!isPlayingAllSequentially) return;
+                            idx++;
+                            const nextTimer = setTimeout(playNextItem, 380);
+                            activeTimeouts.push(nextTimer);
+                        }, true);
+                    }, 260);
+                    activeTimeouts.push(pauseBetween);
+                }, true);
+            }
+
+            playNextItem();
+        }
+
+        function stopSequentialPlayAll() {
+            isPlayingAllSequentially = false;
+            resetAllHighlights();
+            updatePlayAllBtnUI();
+        }
+
+        function updatePlayAllBtnUI() {
+            const btn = document.getElementById('playAllVocabBtn');
+            const icon = document.getElementById('playAllIcon');
+            const text = document.getElementById('playAllText');
+            if (!btn || !icon || !text) return;
+
+            if (isPlayingAllSequentially) {
+                icon.className = 'fa-solid fa-stop';
+                text.innerText = 'إيقاف القراءة المتسلسلة ⏹️';
+                btn.classList.replace('bg-emerald-600', 'bg-rose-600');
+                btn.classList.replace('hover:bg-emerald-700', 'hover:bg-rose-700');
+            } else {
+                icon.className = 'fa-solid fa-play';
+                text.innerText = 'قراءة الكل بالترتيب (9-16) 🔊';
+                btn.classList.replace('bg-rose-600', 'bg-emerald-600');
+                btn.classList.replace('hover:bg-rose-700', 'hover:bg-emerald-700');
+            }
+        }
+
+        // إخفاء أو إظهار المعاني والترجمة العربية لاختبار الحفظ
+        function toggleArabicMeanings() {
+            hideMeaningsMode = !hideMeaningsMode;
+            const btn = document.getElementById('toggleMeaningsBtn');
+
+            if (!hideMeaningsMode) {
+                vocabListItems.forEach(item => { item.sentenceOpened = true; });
+            }
+
+            updateTranslationsUIOnly();
+
+            if (btn) {
+                if (hideMeaningsMode) {
+                    btn.innerHTML = '<i class="fa-solid fa-eye"></i><span class="ar-font">إظهار المعاني والترجمة</span>';
+                    btn.classList.replace('bg-amber-500', 'bg-slate-700');
+                    btn.classList.replace('hover:bg-amber-600', 'hover:bg-slate-800');
+                } else {
+                    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i><span class="ar-font">إخفاء المعاني (اختبر نفسك)</span>';
+                    btn.classList.replace('bg-slate-700', 'bg-amber-500');
+                    btn.classList.replace('hover:bg-slate-800', 'hover:bg-amber-600');
+                }
+            }
+        }
+
+        // =====================================================================
+        // رفع وحفظ الصور للبطاقات (9 إلى 16) في IndexedDB + LocalStorage + HTML
+        // =====================================================================
+        function openMediaDB() {
+            return new Promise((resolve) => {
+                if (!('indexedDB' in window)) {
+                    resolve(null);
+                    return;
+                }
+                const req = indexedDB.open(IDB_NAME, 1);
+                req.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains(IDB_STORE)) {
+                        db.createObjectStore(IDB_STORE);
+                    }
+                };
+                req.onsuccess = (e) => resolve(e.target.result);
+                req.onerror = () => resolve(null);
+            });
+        }
+
+        async function idbSetItem(key, val) {
+            try {
+                const db = await openMediaDB();
+                if (!db) return;
+                return new Promise((resolve) => {
+                    const tx = db.transaction(IDB_STORE, 'readwrite');
+                    tx.objectStore(IDB_STORE).put(val, key);
+                    tx.oncomplete = () => resolve(true);
+                    tx.onerror = () => resolve(false);
+                });
+            } catch (e) {}
+        }
+
+        async function idbGetItem(key) {
+            try {
+                const db = await openMediaDB();
+                if (!db) return null;
+                return new Promise((resolve) => {
+                    const tx = db.transaction(IDB_STORE, 'readonly');
+                    const req = tx.objectStore(IDB_STORE).get(key);
+                    req.onsuccess = () => resolve(req.result || null);
+                    req.onerror = () => resolve(null);
+                });
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function applyCustomImagesToDOM() {
+            vocabListItems.forEach(item => {
+                if (item.customImg) {
+                    const boxEl = document.getElementById(`vocab-img-box-${item.id}`);
+                    if (boxEl) {
+                        boxEl.innerHTML = `<img src="${item.customImg}" alt="${item.word}" class="w-full h-full object-cover block" />`;
+                    }
+                }
+            });
+            updateSaveButtonVisibility();
+        }
+
+        function handleVocabImageUpload(event, itemId) {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const MAX_W = 550;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > MAX_W) {
+                        h = Math.round((h * MAX_W) / w);
+                        w = MAX_W;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+                    const item = vocabListItems.find(i => i.id === itemId);
+                    if (item) {
+                        item.customImg = dataUrl;
+                        applyCustomImagesToDOM();
+                        saveVocabImagesToStorage();
+                        showToast(`تم حفظ صورة (${item.word}) تلقائياً بنجاح ✓`);
+                        setTimeout(hideToast, 1800);
+                    }
+                };
+                img.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function saveVocabImagesToStorage() {
+            const map = {};
+            vocabListItems.forEach(i => {
+                if (i.customImg) map[i.id] = i.customImg;
+            });
+            await idbSetItem(STORAGE_KEY_VOCAB_9_16_IMAGES, map);
+            try {
+                localStorage.setItem(STORAGE_KEY_VOCAB_9_16_IMAGES, JSON.stringify(map));
+            } catch (e) {}
+        }
+
+        async function loadVocabImagesFromStorage() {
+            if (window.__EMBEDDED_VOCAB_9_16_IMAGES__) {
+                vocabListItems.forEach(i => {
+                    if (window.__EMBEDDED_VOCAB_9_16_IMAGES__[i.id]) {
+                        i.customImg = window.__EMBEDDED_VOCAB_9_16_IMAGES__[i.id];
+                    }
+                });
+            }
+            try {
+                let map = await idbGetItem(STORAGE_KEY_VOCAB_9_16_IMAGES);
+                if (!map) {
+                    const raw = localStorage.getItem(STORAGE_KEY_VOCAB_9_16_IMAGES);
+                    if (raw) map = JSON.parse(raw);
+                }
+                if (map) {
+                    vocabListItems.forEach(i => {
+                        if (map[i.id]) i.customImg = map[i.id];
+                    });
+                }
+            } catch (e) {}
+            applyCustomImagesToDOM();
+        }
+
+        function updateSaveButtonVisibility() {
+            const btn = document.getElementById('saveHtmlWithImagesBtn');
+            if (!btn) return;
+            const hasCustom = vocabListItems.some(i => Boolean(i.customImg));
+            if (hasCustom) btn.classList.remove('hidden');
+            else btn.classList.add('hidden');
+        }
+
+        function downloadPageWithSavedImages() {
+            applyCustomImagesToDOM();
+            const cloneDoc = document.documentElement.cloneNode(true);
+            const scriptEl = document.createElement('script');
+            const map = {};
+            vocabListItems.forEach(i => {
+                if (i.customImg) map[i.id] = i.customImg;
+            });
+            scriptEl.textContent = `window.__EMBEDDED_VOCAB_9_16_IMAGES__ = ${JSON.stringify(map)};`;
+            const head = cloneDoc.querySelector('head');
+            if (head) head.insertBefore(scriptEl, head.firstChild);
+
+            const htmlContent = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'LANGUALEARN_Vocabulary_9_to_16_Saved.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // =====================================================================
+        // محرك الصوت التعليمي الواضح والمتوافق مع GitHub Pages (مطابق 100% لصفحة 142)
+        // =====================================================================
+        function findBestRoutineVoice(voicesList) {
+            if (!voicesList || voicesList.length === 0) return null;
+
+            const cleanEnVoices = voicesList.filter(v => {
+                if (!v.lang || !v.lang.toLowerCase().startsWith('en')) return false;
+                const lowerName = v.name.toLowerCase();
+                return !EXCLUDED_VOICE_KEYWORDS.some(bad => lowerName.includes(bad));
+            });
+
+            const list = cleanEnVoices.length > 0 ? cleanEnVoices : voicesList.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+            const styleId = voiceStyles[currentVoiceStyleIndex]?.id || 'calm_female';
+
+            let priorityNames = [];
+            if (styleId === 'calm_male') {
+                priorityNames = [
+                    'andrew online (natural)',
+                    'brian online (natural)',
+                    'guy online (natural)',
+                    'christopher online (natural)',
+                    'eric online (natural)',
+                    'roger online (natural)',
+                    'steffan online (natural)',
+                    'ryan online (natural)',
+                    'google uk english male',
+                    'daniel (enhanced)',
+                    'daniel',
+                    'alex',
+                    'aaron',
+                    'arthur',
+                    'google us english'
+                ];
+            } else if (styleId === 'clear_uk') {
+                priorityNames = [
+                    'sonia online (natural)',
+                    'libby online (natural)',
+                    'maisie online (natural)',
+                    'google uk english female',
+                    'serena (enhanced)',
+                    'kate (enhanced)',
+                    'martha',
+                    'serena',
+                    'kate',
+                    'daniel'
+                ];
+            } else {
+                priorityNames = [
+                    'emma online (natural)',
+                    'ava online (natural)',
+                    'jenny online (natural)',
+                    'michelle online (natural)',
+                    'ana online (natural)',
+                    'aria online (natural)',
+                    'sonia online (natural)',
+                    'libby online (natural)',
+                    'clara online (natural)',
+                    'google uk english female',
+                    'samantha (enhanced)',
+                    'ava (enhanced)',
+                    'allison (enhanced)',
+                    'google us english',
+                    'samantha',
+                    'ava',
+                    'allison',
+                    'karen',
+                    'moira'
+                ];
+            }
+
+            for (const keyword of priorityNames) {
+                const match = list.find(v => v.name.toLowerCase().includes(keyword));
+                if (match) return match;
+            }
+
+            const anyNatural = list.find(v =>
+                v.name.toLowerCase().includes('natural') ||
+                v.name.toLowerCase().includes('enhanced') ||
+                v.name.toLowerCase().includes('google')
+            );
+            if (anyNatural) return anyNatural;
+
+            return list[0] || null;
+        }
+
+        function populateVoiceList() {
+            if (!('speechSynthesis' in window)) return;
+            const voices = window.speechSynthesis.getVoices();
+            if (!voices || voices.length === 0) return;
+
+            const best = findBestRoutineVoice(voices);
+            if (best) {
+                lockedNativeVoice = best;
+                const cleanName = best.name.replace(/Google|Microsoft|Apple|Desktop|English|United States|United Kingdom|Canada|\(\)/gi, '').trim() || 'Calm Teacher';
+                const footerBadge = document.getElementById('footerSpeakerName');
+                const toastLabel = document.getElementById('toastSpeakerLabel');
+                if (footerBadge) footerBadge.innerText = `Voice: ${cleanName}`;
+                if (toastLabel) toastLabel.innerText = `Reading calmly (${cleanName}):`;
+            }
+        }
+
+        function formatCalmEducationalText(rawText) {
+            if (!rawText) return '';
+            let text = String(rawText).replace(/’/g, "'").trim();
+            return text;
+        }
+
+        function playCloudBackupTts(text, rate, onFinished) {
+            try {
+                if (currentAudioPlayer) {
+                    currentAudioPlayer.pause();
+                    currentAudioPlayer = null;
+                }
+                const styleId = voiceStyles[currentVoiceStyleIndex]?.id || 'calm_female';
+                const tlLang = styleId === 'clear_uk' ? 'en-GB' : 'en-US';
+                const cleanText = encodeURIComponent(text);
+                const cloudAudioUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=${tlLang}&q=${cleanText}`;
+                const audio = new Audio();
+                audio.referrerPolicy = 'no-referrer';
+                audio.src = cloudAudioUrl;
+                currentAudioPlayer = audio;
+                audio.playbackRate = Math.max(0.72, Math.min(rate || 0.78, 0.95));
+                audio.onended = () => { if (onFinished) onFinished(); };
+                audio.onerror = () => { if (onFinished) onFinished(); };
+                audio.play().catch(() => { if (onFinished) onFinished(); });
+            } catch (e) {
+                if (onFinished) onFinished();
+            }
+        }
+
+        function speakSentenceWithLockedVoice(text, onFinished) {
+            currentSpeechSessionId++;
+            const sessionId = currentSpeechSessionId;
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                    window.speechSynthesis.resume();
+                } catch (e) {}
+
+                const startTimer = setTimeout(() => {
+                    if (sessionId !== currentSpeechSessionId) return;
+
+                    populateVoiceList();
+                    const bestVoice = lockedNativeVoice || findBestRoutineVoice(window.speechSynthesis.getVoices());
+                    const styleObj = voiceStyles[currentVoiceStyleIndex] || voiceStyles[0];
+
+                    const preparedText = formatCalmEducationalText(text);
+                    const utterance = new SpeechSynthesisUtterance(preparedText);
+                    window.activeUtteranceRef = utterance;
+                    utteranceGcKeeper.push(utterance);
+                    if (utteranceGcKeeper.length > 10) utteranceGcKeeper.shift();
+
+                    const isCloudOrNaturalVoice = bestVoice && (
+                        bestVoice.name.toLowerCase().includes('natural') ||
+                        bestVoice.name.toLowerCase().includes('google') ||
+                        bestVoice.name.toLowerCase().includes('online')
+                    );
+
+                    if (bestVoice) {
+                        utterance.voice = bestVoice;
+                        utterance.lang = bestVoice.lang || 'en-US';
+                    } else {
+                        utterance.lang = styleObj.id === 'clear_uk' ? 'en-GB' : 'en-US';
+                    }
+
+                    const effectiveRate = Math.max(0.68, Math.min(0.95, currentSpeechRate + (styleObj.rateOffset || 0)));
+                    utterance.rate = effectiveRate;
+                    utterance.pitch = isCloudOrNaturalVoice ? 1.0 : (styleObj.pitch || 1.0);
+                    utterance.volume = 1.0;
+
+                    let finished = false;
+                    const done = () => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        finished = true;
+                        if (onFinished) onFinished();
+                    };
+
+                    utterance.onend = done;
+                    utterance.onerror = (err) => {
+                        if (finished || sessionId !== currentSpeechSessionId) return;
+                        if (err && (err.error === 'canceled' || err.error === 'interrupted')) return;
+                        finished = true;
+                        playCloudBackupTts(text, effectiveRate, onFinished);
+                    };
+
+                    window.speechSynthesis.resume();
+                    window.speechSynthesis.speak(utterance);
+                }, 60);
+                activeTimeouts.push(startTimer);
+            } else {
+                playCloudBackupTts(text, currentSpeechRate, onFinished);
+            }
+        }
+
+        function resetAllHighlights(keepSequenceFlag = false) {
+            currentSpeechSessionId++;
+            if (!keepSequenceFlag) {
+                isPlayingAllSequentially = false;
+            }
+            activeTimeouts.forEach(t => clearTimeout(t));
+            activeTimeouts = [];
+
+            if ('speechSynthesis' in window && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) {
+                window.speechSynthesis.cancel();
+            }
+            if (currentAudioPlayer) {
+                currentAudioPlayer.pause();
+                currentAudioPlayer = null;
+            }
+
+            document.querySelectorAll('.static-attractive-highlight').forEach(el => {
+                el.classList.remove('static-attractive-highlight');
+            });
+            hideToast();
+        }
+
+        function toggleSpeechRate() {
+            const display = document.getElementById('speedDisplay');
+            if (currentSpeechRate === 0.78) {
+                currentSpeechRate = 0.70;
+                if (display) display.innerText = 'بطيء ومفصل (0.70x)';
+            } else if (currentSpeechRate === 0.70) {
+                currentSpeechRate = 0.86;
+                if (display) display.innerText = 'طبيعي معتدل (0.86x)';
+            } else {
+                currentSpeechRate = 0.78;
+                if (display) display.innerText = 'هادئ وتعليمي (0.78x)';
+            }
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('liveReadingToast');
+            const toastText = document.getElementById('toastWord');
+            if (toastText) toastText.innerText = text;
+            if (toast) {
+                toast.classList.remove('opacity-0', 'translate-y-8');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('liveReadingToast');
+            if (toast) {
+                toast.classList.add('opacity-0', 'translate-y-8');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+
+        window.onload = async function() {
+            await loadVocabImagesFromStorage();
+            populateVoiceList();
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    populateVoiceList();
+                };
+            }
+        };
+    </script>
+</body>
+</html>
